@@ -1,17 +1,19 @@
-﻿Stratasys Reprap Project
+﻿## Stratasys Reprap Project
+
 Repurposing and rebuilding 3D printers made by stratasys "Strat-a-trap"
 
 This will cover various models, mainly the ones that are old enough to get for free, however these printers are very similar in design so small modifications in configuration may be needed for your printer.
 
-Something to consider, these printers use high torque - high voltage NEMA 23 stepper motors this means you may have to replace them with something more suitable for use with modern stepper drivers. 
+**Something to consider,** these printers use high torque - high voltage NEMA 23 stepper motors this means you may have to replace them with something more suitable for use with modern stepper drivers. 
 I do not reccommend using an external stepper driver.
 If you have these motors, they will need to be replaced: 
 
 Applied Motion: MN23-700-002 
 Lin Engineering: 5718M-01S-04R0
 
+This guide will cover the following printers:
 Dimension 1200 SST
-
+uPrint
 
 The default print resolution set by the outdated Catalyst software was 0.254 mm or 0.330 mm
 
@@ -74,44 +76,33 @@ Motion
 
 ![ScreenShot](Stratasysxyz_illustration1.jpg)
 
-    Belts
-Gates 3MR-282-09 Belt
-SKU	9390-4094
-Part Number	3MR-282-09
-Profile	GT
-Pitch	3 mm
-Number of Teeth	94
-Length (inch)	11.1
-Length (mm)	282
+    XY Axis Belt Specs
+
+>Gates 3MR-282-09 Belt
+>SKU 9390-4094
+>Part Number 3MR-282-09
+>Profile GT
+>Pitch	3 mm
+>Number of Teeth 94
+>Length (inch)	11.1
+>Length (mm)	282
 
 
-    Y Axis belts
-SDP A 6T53M280090
-Bet Thikness 9mm
-Pitch Length 840mm
-Part Number: A 6R53M280090
-Belt Type: Single Sided
-Number of Grooves: 280
-Belt Witdth: 9mm
-Pitch Length: 840mm
+    Y Axis Small Belt
 
-GT®3 is an equivalent and direct
-replacement for GT®2 belts. As
-inventories of GT®2 belts are
-exhausted, they will be replaced
-with the GT®3 equivalent. GT®3
-belts will not be avilable until
-GT®2 belts are depleted
+>SDP A 6T53M280090
+>Bet Thikness 9mm
+>Pitch Length 840mm
+>Part Number: A 6R53M280090
+>Belt Type: Single Sided
+>Number of Grooves: 280
+>Belt Witdth: 9mm
+>Pitch Length: 840mm
 
-MATERIAL:
-Neoprene - Nylon Covered, Fiberglass Reinforced
+>GT®3 is an equivalent and direct replacement for GT®2 belts.
 
-Breaking Strength:
-158 N per 1 mm (113 lbf per 1/8 in.) Belt Width;
-not representative of the load-carrying
-capacity of the belt.
-Working Tension:
-507 N for 25.4 mm belt (114 lbf for 1 in. belt).
-For more information, see the technical section.
-Temperature Range:
--34°C to +85°C (-30°F to +185°F)
+>Neoprene - Nylon Covered, Fiberglass Reinforced
+>Breaking Strength: 158 N per 1 mm (113 lbf per 1/8 in.) 
+>Belt Width; not representative of the load-carrying capacity of the belt.
+>Working Tension:507 N for 25.4 mm belt (114 lbf for 1 in. belt).
+>Temperature Range: -34°C to +85°C (-30°F to +185°F)
