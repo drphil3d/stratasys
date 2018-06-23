@@ -4,18 +4,11 @@ Repurposing and rebuilding 3D printers made by stratasys "Strat-a-trap"
 
 This will cover various models, mainly the ones that are old enough to get for free, however these printers are very similar in design so small modifications in configuration may be needed for your printer.
 
-**Something to consider,** these printers use high torque - high voltage NEMA 23 stepper motors this means you may have to replace them with something more suitable for use with modern stepper drivers. 
-I do not reccommend using an external stepper driver.
-If you have these motors, they will need to be replaced: 
-
-Applied Motion: MN23-700-002 
-Lin Engineering: 5718M-01S-04R0
+**Something to consider only if you have an older printer** these printers use high torque - high voltage NEMA 23 stepper motors this means you may have to replace them with something more suitable for use with modern stepper drivers. 
 
 This guide will cover the following printers:
 Dimension 1200 SST
 uPrint
-
-The default print resolution set by the outdated Catalyst software was 0.254 mm or 0.330 mm
 
 
 Bake Oven Tempature Range
@@ -38,19 +31,23 @@ Normal Travel
     X:254
     Y:254
     Z:305
+
+End Stops
+
+    24v optical end stop.... crap nothing supports this
   
 Origin
 
     X:6.35
     Y:5.08
-Steps Per mm
+
+Steps Per mm - Vefied Working!
 
     X:126 
     Y:267.5
     Z:1266
-
+Thank You!
 https://reprap.org/forum/read.php?1,418999,435031#msg-435031 
-
 
 Gantry Specs
 
