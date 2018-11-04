@@ -1,6 +1,6 @@
 ﻿## Stratasys Reprap Project
 
-Repurposing and rebuilding 3D printers made by stratasys "Strat-a-trap"
+Repurposing and rebuilding 3D printers made by stratasys "Rat-trap"
 
 This will cover various models, mainly the ones that are old enough to get for free, however these printers are very similar in design so small modifications in configuration may be needed for your printer.
 
@@ -10,54 +10,60 @@ This guide will cover the following printers:
 Dimension 1200 SST
 uPrint
 
-
 Bake Oven Tempature Range
 
     75° C (167° F) Max
 
 Gantry
 
+    uPrint
     254 x 254 x 305 mm (10 x 10 x 12 in)
 
 
 Max Travel
 
-    X:237.162 mm (9.33 in) 
-    Y:265.613 mm (10.45 in)
-    Z:330.2 mm
+    uPrint X270 Y290 Z330
+    1200sst X:237.162 mm (9.33 in) Y:265.613 mm (10.45 in) Z:330.2 mm
   
 Normal Travel
 
-    X:254
-    Y:254
-    Z:305
+    uPrint X260 Y280 Z300
+    1200SST X:254 Y:254 Z:305
 
 End Stops
 
-    24v optical end stop.... crap nothing supports this
+    5v logic
+    Optical Endstop min-max of all axis
+    Use power distrobution board test pins for endstop signal
   
-Origin
+Homing Directions
 
-    X:6.35
-    Y:5.08
+     X-Min Y-Max Z-Max
 
-Steps Per mm - Vefied Working!
+Steps/mm
 
-    X:126 
-    Y:267.5
-    Z:1266
-Thank You!
-https://reprap.org/forum/read.php?1,418999,435031#msg-435031 
+    Uprint X60 Y126 Z1266
+    1200SST X126 Y267.5 Z1266
+    
+[Thank You! More info may not be correct](https://reprap.org/forum/read.php?1,418999,435031#msg-435031) 
 
 Gantry Specs
 
-    12 mm GT3 Belts (Stronger Version of GT2)
+    3mm belt pitch - 12 mm GT3 Belts
     16 mm Linear Rods
+
 Motors
 
+    Uprint
+    X 16tx60tx20t (motor 16 tooth pulley) - (60 tooth pulley) - (20t drive shaft belt)
+    Y 20t (20 tooth pulley) to (ideler pulley)
+    Z lead screw driven through motor mounted to bed
+
+    1200SST
     X (motor 16 tooth pulley) - (60 tooth pulley)
     Y (20 tooth pulley) to (ideler pulley)
     Z (36 tooth pulley) to (36 tooth) to (big lead screw pitch unknown)
+    
 Electronics
 
     2x 120v DC 400 Watt (B075 CAT NO. FS2001G102) - Build Chamber Heaters one on each side
