@@ -1,4 +1,4 @@
-﻿## Stratasys Reprap Project
+# Stratasys Reprap Project
 
 Repurposing and rebuilding 3D printers made by stratasys "Rat-trap"
 
@@ -9,6 +9,14 @@ This will cover various models, mainly the ones that are old enough to get for f
 This guide will cover the following printers:
 Dimension 1200 SST
 uPrint
+
+### Printer Board options
+Ideally you want to use a board that has decently powerful stepper drivers, possibly even high amperage external drivers.
+I'm using the Einsy Retro because thats what I had avalible at the time. It's definately underpowered for the high torque stepper motors on top of that I also have a terrible squeeling noise I can't get rid of in SpreadCycle mode so I'm forced to run the XY in StealthChop.
+
+One imporatnt feature that I gain from the use of Trinamic drivers is StallGuard which provides sensorless homing.
+Use something more powerfull then a TMC2130
+
 
 Bake Oven Tempature Range
 
