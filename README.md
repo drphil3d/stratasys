@@ -1,24 +1,19 @@
 # Stratasys Reprap Project
 
-Repurposing and rebuilding 3D printers made by stratasys "Rat-trap"
+Stratasys uPrint and Dimension 1200 SST Retrofit
 
-This will cover various models, mainly the ones that are old enough to get for free, however these printers are very similar in design so small modifications in configuration may be needed for your printer.
-
-**Something to consider only if you have an older printer** these printers use high torque - high voltage NEMA 23 stepper motors this means you may have to replace them with something more suitable for use with modern stepper drivers. 
-
-This guide will cover the following printers:
-        
-        Dimension 1200 SST
-        uPrint
+Just download the zip file containing the config for this machine.
 
 ### Printer Board options
+
+DuetWifi - The option that makes sense
+
+
 Ideally you want to use a board that has decently powerful stepper drivers, possibly even high amperage external drivers.
 I'm using the Einsy Retro because that's what I had available at the time. It's definitely underpowered for the high torque stepper motors on top of that I also have a horrible squealing noise I can't get rid of in SpreadCycle mode so I'm forced to run the XY in StealthChop.
 
 One important feature that I gain from the use of Trinamic drivers is StallGuard which provides sensorless homing.
 Use something more powerful than a TMC2130
-
-### Mechanical Specifications
 
 #### Bake Oven
     Use an SSR to energize heating elements
@@ -40,7 +35,6 @@ Use something more powerful than a TMC2130
 
 #### Offsets
         uPrint X52
-        
 
 #### End Stops
    Use StallGuard sensorless homing and avoid all this madness
