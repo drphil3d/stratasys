@@ -1,9 +1,0 @@
-{
-  "to": "C:\\Users\\Dell\\OneDrive\\Play V2\\Marlin2\\Marlin\\.mct.bak\\origin\\bugfix-2.0.x\\2018-12-11 14-41-20",
-  "root": "C:/Users/Dell/OneDrive/Play V2/Marlin2/Marlin",
-  "files": [
-    "C:\\Users\\Dell\\OneDrive\\Play V2\\Marlin2\\Marlin\\Marlin\\Configuration.h",
-    "C:\\Users\\Dell\\OneDrive\\Play V2\\Marlin2\\Marlin\\Marlin\\Configuration_adv.h"
-  ],
-  "message": "trinamic Rsens .22 \nmesh limits set\nbed size 170.5x220x195"
-}
