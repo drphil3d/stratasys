@@ -8,7 +8,7 @@ G90                                      ; Send absolute coordinates...
 M83                                      ; ...but relative extruder moves
 
 ; Network
-M552 S1 P"wireless g network"
+;M552 S1 P"SET NETWORK NAME"
 
 ; Drives
 M569 P0 S0                               ; Physical drive 0 goes forwards
