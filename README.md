@@ -1,19 +1,16 @@
 # Stratasys Reprap Project
 
-Stratasys uPrint and Dimension 1200 SST Retrofit
+Models
+Stratasys uPrint, uPrint SE
+Dimension 1200es SST / BST
 
-Just download the zip file containing the config for this machine.
 
 ### Printer Board options
 
-DuetWifi - The option that makes sense
+DuetWifi - Best option that matches the stepper drivers
 
 
-Ideally you want to use a board that has decently powerful stepper drivers, possibly even high amperage external drivers.
-I'm using the Einsy Retro because that's what I had available at the time. It's definitely underpowered for the high torque stepper motors on top of that I also have a horrible squealing noise I can't get rid of in SpreadCycle mode so I'm forced to run the XY in StealthChop.
-
-One important feature that I gain from the use of Trinamic drivers is StallGuard which provides sensorless homing.
-Use something more powerful than a TMC2130
+Ideally you want to use a board with decently powerful stepper drivers, possibly even high amperage external drivers.
 
 #### Bake Oven
     Use an SSR to energize heating elements
