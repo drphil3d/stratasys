@@ -3,6 +3,7 @@
 Open Source Stratasys Conversion
 
 ![Bridging Test](/pictures/Stratasys-uPrint-pla-bridging-thumbnail.png)
+
 This was a long painful process, now that I've done the hard work it should be fairly easy for anyone to do this conversion. I'm not utilizing the stock hotends, they are designed for use with PC-ABS and other high temperature materials. At the moment I don't need dual extrusion, or the proprietary filament system which is far too complex. The results of this conversion is printer that makes consistent, strong parts with minimal effort.
 
 If you plan to use the heated chamber above 40c you will need a water cooled hotend and extruder. I recommend using a Bondtech BMG - The Titan extruder was a nightmare, it requires disassembly to clear jams.
