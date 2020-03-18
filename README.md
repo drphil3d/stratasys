@@ -1,111 +1,99 @@
 # Stratasys Reprap Project
 
 Models
-Stratasys uPrint, uPrint SE
-Dimension 1200es SST / BST
+   [Stratasys uPrint, uPrint SE / Plus](https://github.com/drphil3d/stratasys/tree/uPrint-SE)
+   [Dimension 1200es SST / BST](https://github.com/drphil3d/stratasys/tree/Dimension-1200-SST)
 
+Discussion
+[Duet Forum](https://forum.duet3d.com/topic/10982/stratasys-uprint-retrofit-finally-complete/7)
 
-### Printer Board options
+### Printer Control Board options
 
-DuetWifi - Best option that matches the stepper drivers
+Ideally you want to use a board with decently powerful stepper drivers. Something in the 2amp range is preferable
 
+##### DuetWifi
+ -Pros
+    Best option that matches the stepper drivers
+    Sensorless Homing means no need to wire endstops
+    Macro system is necessary for the extra features
 
-Ideally you want to use a board with decently powerful stepper drivers, possibly even high amperage external drivers.
-
-#### Bake Oven
-    Use an SSR to energize heating elements
-    They can be wired to run at 120vac or 240vac depending on where you live
-    Operating Tempature 0c - 75° C (167° F) Max
-
-#### Gantry
-    uPrint 
-    254 x 254 x 305 mm (10 x 10 x 12 in)
-
-
-#### Max Travel
-    uPrint X280 Y262 Z150
-    1200sst X:237.162 mm (9.33 in) Y:265.613 mm (10.45 in) Z:330.2 mm
-  
-#### Normal Travel
-    uPrint XX260 Y280 Z160
-    1200 SST X:254 Y:254 Z:305
-
-#### Offsets
-        uPrint X52
-
-#### End Stops
-   Use StallGuard sensorless homing and avoid all this madness
+ -Cons
+    Display firmware doesn't support rotation of 90degrees
+    Expensive
     
-    5v logic
-    Optical Endstop min-max of all axis
-    Use power distribution board test pins for endstop signal
-  
-#### Homing Directions
-     X-Min Y-Max Z-Max
+#### Klipper
 
-#### Steps/mm
+ -Pros
+   Use any board or combination of boards you want
+   Super Fast Printing
+   High Accuracy
+   Customizable
+   Macro Support
+    
+ -Cons
+   Requires a raspberry pi or other embedded system
+
+#### Marlin
+ -Pros
+   It works that was the first option I used on the uPrint
+
+ -Cons
+   Must be compiled and flashed every time you make a small change
+   Most boards don't have stepper drivers that are powerful enough
+
+
+##### Bake Oven temperature control
+The stock bake oven runs on 120VDC - Unfortunately the 120VDC power supply in my printer was not functional. I figured the better option was to simply use an AC Solid State Rely to control the two heating elements. Keep in mind the heating elements can be wired for to operate at 120v ot 240v parallel or series.
+
+Make sure the heater safety shutoff switches operate correctly, If a fan stops spinning the heater will overheat without the shutoff switch. Do not remove them.
+
+This oven gets very hot under operation, I noticed the soldier on the OEM optical endstop PCB had melted and dripped down the board.
+Operating Temperature 0c - 75° C (167° F) Max
+
+Heating
+   2x 120v DC 400 Watt (B075 CAT NO. FS2001G102) - Build Chamber Heaters one on each side
+   2x 24V 0.48A Radial Blower Fans (blows air through the heating elements)
+Cooling   
+   1x 24V Radial Blower Fan - Blows room temperature air onto the printhead and part from outside the build oven.
+
+
+##### Gantry Information
+
+Depending on the model you may have more usable build area than what is immediately evident. The standard uPrint has a 152x152 build plate. However the printhead can reach outside of the build plate area to access more unused print volume. I believe the standard uPrint can accept two sizes of build platforms.
+
+Factory Specs
+ uPrint 254 x 254 x 305 mm (10 x 10 x 12 in)
+ Dimension SST 1200 SST X:254 Y:254 Z:305
+ 
+Actual Build Volume 
+ uPrint X152 Y152 Z160
+
+Max Travel
+  uPrint X280 Y262 Z150
+  1200sst X:237.162 mm (9.33 in) Y:265.613 mm (10.45 in) Z:330.2 mm
+
+End Stops
+   Use StallGuard sensorless homing and avoid all this madness, otherwise there are 2 optical endstops on each axis.
+
+However another method is to tap into the test points the power distribution board if not already removed for the endstop signals   
+
+X-Min Y-Max Z-Max
+
+Steps Per mm at 16x Microstepping
+These seem to be accurate for the uPrint M92 X106.66 Y268 Z1011.99 E417
+Z axis threaded rod is Imperial
+
+Hardware
+    XY 3mm belt pitch - 12mm GT3 Belts 16mm Linear Rods
+
+
 Uprint
-      
-      X53.33 Y133.75 Z1011.89 E418
-1200SST
-        
-        X126 Y267.5 Z1266
-    
-[Thank You! More info may not be correct](https://reprap.org/forum/read.php?1,418999,435031#msg-435031) 
-
-#### Gantry Specs
-
-    3mm belt pitch - 12mm GT3 Belts
-    16mm Linear Rods
-
-#### Belts and Pulleys
-
-   Uprint
-    
     X 16t x 60t x 20t (motor 16 tooth pulley) - (60 tooth pulley) - (20t drive shaft belt)
     Y 20t (20 tooth pulley) to (idler pulley)
     Z lead screw driven through motor mounted to bed
-
-   1200 SST
-  
+1200 SST
     X (motor 16 tooth pulley) - (60 tooth pulley)
     Y (20 tooth pulley) to (idler pulley)
     Z (36 tooth pulley) to (36 tooth) to (big lead screw pitch unknown)
     
-#### Electronics
-
-    2x 120v DC 400 Watt (B075 CAT NO. FS2001G102) - Build Chamber Heaters one on each side
-    4x 24V 0.48A Radial Blower Fans (blows air through the heating elements)
-    1x 24V Radial Blower Fan (blows colder air on the printhead via a tube that runs down to the bottom of the printers case)
-
-
-![ScreenShot](Stratasysxyz_illustration1.jpg)
-
-##### XY Axis Belt Specs
-
->Gates 3MR-282-09 Belt
->SKU 9390-4094
->Part Number 3MR-282-09
->Profile GT
->Pitch	3 mm
->Number of Teeth 94
->Length (inch)	11.1
->Length (mm)	282
-
-##### Y Axis Small Belt
-
->SDP A 6T53M280090
->Bet Thickness 9mm
->Pitch Length 840mm
->Part Number: A 6R53M280090
->Belt Type: Single Sided
->Number of Grooves: 280
->Belt Width: 9mm
->Pitch Length: 840mm
-
->GT®3 is an equivalent and direct replacement for GT®2 belts.
->Neoprene - Nylon Covered, Fiberglass Reinforced
->Breaking Strength: 158 N per 1 mm (113 lbf per 1/8 in.) 
->Belt Width; not representative of the load-carrying capacity of the belt.
->Working Tension:507 N for 25.4 mm belt (114 lbf for 1 in. belt).
->Temperature Range: -34°C to +85°C (-30°F to +185°F)
+[Hardware Specs](hardwarespecs.md)
