@@ -1,15 +1,15 @@
-M400 ; wait til Sstuff stops
-M574 X1 S3 ; use stall guard for endstops
-M913 X30  ; drop motor currents to 30% 
-M201 X800 ; reduce acceleration on X/Y to stop false triggers
-M915 X S2 R0 F0 H200; Sensitivity 4, don’t take action, don’t filter, 200steps/sec
-G91 ; set relative
-G1 Z5 F1600 S2
-G1 S1 X-265 F6000 ; move forward stopping at the endstop
-G1 X26 F1200 ; move away from end
-G1 Z-5 F1200 S2
-G90 ; back to absolute positioning
-M400              ; wait again
-M913 X100         ; motor currents back to 100%
-M201 X1000        ; accel back to original
-M574 X1 S0     ; set endstops back
+M574 X1 S3                      ; use stall guard for endstops
+M400                    	; make sure everything has stopped before we make changes
+M913 X65 	             	; reduce motor current to 50% to prevent belts slipping unfiltered
+M915 P0 S1 R1 F0		; Motor number Sensitivity Report filtering
+;M201 X800 ; reduce acceleration on X/Y to stop false triggers
+
+G91                   	 	; use relative positioning
+G1 Z5 F9000 S2
+G1 S1 X-300 F6000    		; move to home position
+;G1 X10 F2000          		; back off to edge of bed
+G1 Z-5 F9000 S2
+	
+G90            			; back to absolute positioning
+M400
+M913 X100       		; motor currents back to normal
